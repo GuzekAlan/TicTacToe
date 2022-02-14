@@ -9,6 +9,7 @@ body {
   --color_two_dark: rgb(36, 4, 54);
   --color_three: rgb(80, 155, 80);
   --margin: 15%;
+  font-size: 12px;
 }
 
 .grid-section {
@@ -16,10 +17,10 @@ body {
   margin-right: var(--margin);
   display: grid;
   gap: 1rem;
-
+  max-width: 100%;
   /* Nice to remember but i dont need it */
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
 }
 
