@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
+    <!-- 
+      defer makes script executed after window loads (getting elements before load problem)
+     -->
+    <script defer src="script.js"></script>
     <style>
       @import url('./style.css');
     </style>
     <title>Document</title>
   </head>
   <body>
-    <div class="scoreboard"></div>
-    <section class="grid-section">
-      <button class="frame">0</button>
-      <button class="frame">1</button>
-      <button class="frame">2</button>
-      <button class="frame">3</button>
-      <button class="frame">4</button>
-      <button class="frame">5</button>
-      <button class="frame">6</button>
-      <button class="frame">7</button>
-      <button class="frame">8</button>
-    </section>
+    <div class="game">
+      <div class="scoreboard"></div>
+      <section class="grid-section">
+        <button class="frame">0</button>
+        <button class="frame">1</button>
+        <button class="frame">2</button>
+        <button class="frame">3</button>
+        <button class="frame">4</button>
+        <button class="frame">5</button>
+        <button class="frame">6</button>
+        <button class="frame">7</button>
+        <button class="frame">8</button>
+      </section>
+    </div>
   </body>
 </html>

@@ -8,11 +8,10 @@ body {
   --color_two: rgb(94, 12, 141);
   --color_two_dark: rgb(36, 4, 54);
   --color_three: rgb(80, 155, 80);
+  --margin: 15%;
 }
 
 .grid-section {
-  --margin: 15%;
-
   margin-left: var(--margin);
   margin-right: var(--margin);
   display: grid;
@@ -67,11 +66,13 @@ body {
 .scoreboard {
   background-color: var(--color_two);
   color: var(--color_two_dark);
-  font-size: 10rem;
+  font-size: 7rem;
 
-  margin: 1rem;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 

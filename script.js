@@ -14,8 +14,8 @@ const winningPositions = [
 const players = ['X', 'O'];
 const frameClassName = '.frame';
 const emptySign = '0';
+
 let player = 0;
-let didWon = 0;
 let clickCounter = 0;
 
 // FUNCTIONS
@@ -23,10 +23,6 @@ let clickCounter = 0;
 const getPlayerSign = () => {
   return players[player];
 };
-
-// function getPlayerSign() {
-//   return players[player];
-// }
 
 const changePlayer = () => {
   player = player ? 0 : 1;
@@ -54,16 +50,32 @@ const disableFrame = (frame) => {
   frame.classList.add('disabled');
 };
 
-const winBanner = (playerSign) => {
+const winBanner = async (playerSign) => {
   const frameArray = getFrameArray(frameClassName);
   frameArray.forEach(disableFrame);
   document.querySelector('.scoreboard').innerHTML = `${playerSign} WON !!`;
+  // setTimeout(() => playAgainBanner(), 5000);
+  document.querySelector('.game').addEventListener('mousedown', () => playAgain(), false);
+};
+
+const playAgain = () => {
+  console.log('chuj');
+  player = 0;
+  clickCounter = 0;
+  document.querySelector('.scoreboard').innerHTML = '';
+  const section = document.querySelector('.game');
+  section.replaceWith(section.cloneNode(true));
+  const frameArray = getFrameArray(frameClassName);
+  frameArray.forEach((frame) => {
+    frame.style.color = '';
+    frame.classList.remove('disabled');
+  });
+  setFrameArray(frameClassName, emptySign);
 };
 
 const clickFrame = (frame) => {
   frame.innerHTML = getPlayerSign();
   frame.style.color = 'black';
-  // frame.removeEventListener('click', clickFrame, true);
   disableFrame(frame);
   if (checkPosition()) {
     winBanner(getPlayerSign());
@@ -99,6 +111,12 @@ function counterHandler() {
   ++clickCounter < 9 ? 3 : checkPosition() ? winBanner(getPlayerSign()) : winBanner('NOBODY');
 }
 
+setFrameArray(frameClassName, emptySign);
+
+// /////////////////////////////
+// MY FAILURES ////////////////
+//////////////////////////////
+
 // const won = (signArray) => {
 //   winningPositions.forEach();
 //   return false;
@@ -112,10 +130,6 @@ function counterHandler() {
 //     }
 //   }
 // };
-
-window.onload = () => {
-  setFrameArray(frameClassName, emptySign);
-};
 
 // FIRST TRY
 // const frames = document.getElementsByClassName('frame');
