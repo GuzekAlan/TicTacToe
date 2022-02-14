@@ -1,0 +1,79 @@
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+:root {
+  --color_one: rgb(190, 48, 76);
+  --color_one_dark: rgb(219, 20, 60);
+  --color_two: rgb(94, 12, 141);
+  --color_two_dark: rgb(36, 4, 54);
+  --color_three: rgb(80, 155, 80);
+}
+
+.grid-section {
+  --margin: 15%;
+
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+  display: grid;
+  gap: 1rem;
+
+  /* Nice to remember but i dont need it */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+/* From stack how to make heigtht equal width */
+/* ----------------------------------------- */
+/* .grid-section::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.grid-section > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+} */
+/* ------------------------------------------ */
+
+.frame {
+  background-color: var(--color_one);
+  color: var(--color_one);
+  font-size: 10rem;
+
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1rem;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.frame:hover {
+  transform: scale(1.05);
+  background-color: var(--color_one_dark);
+  color: var(--color_one_dark);
+}
+
+.scoreboard {
+  background-color: var(--color_two);
+  color: var(--color_two_dark);
+  font-size: 10rem;
+
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1rem;
+}
