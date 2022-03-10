@@ -3,11 +3,11 @@ body {
 }
 
 :root {
-  --color_one: rgb(190, 48, 76);
-  --color_one_dark: rgb(219, 20, 60);
-  --color_two: rgb(94, 12, 141);
-  --color_two_dark: rgb(36, 4, 54);
-  --color_three: rgb(80, 155, 80);
+  --color_one: rgb(45, 126, 192);
+  --color_one_dark: rgb(19, 70, 163);
+  --color_two: rgb(18, 4, 94);
+  --color_two_dark: rgb(70, 157, 228);
+  --color_three: rgb(1, 255, 1);
   --margin: 15%;
   font-size: 12px;
 }
